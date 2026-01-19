@@ -10,16 +10,7 @@ const Children = ({
 
     return (
         <div>
-            {data}
-            <br/>
-            <button onClick={() => {
-                let anotherFunctionString = anotherFunction()
-                dataChangingFunction(anotherFunctionString)
-            }
-
-            }>
-                change
-            </button>
+            Children
         </div>
     )
 }
