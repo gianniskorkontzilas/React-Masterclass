@@ -1,16 +1,15 @@
 import React, { useCallback, useState } from "react";
+import GrandChildren from "./GrandChildren";
 
 const Children = ({
-    data,
-    dataChangingFunction,
-    anotherFunction
+  childrenData
 })=> {
 
 
 
     return (
         <div>
-            Children
+            <GrandChildren grantChildrenData={childrenData}></GrandChildren>
         </div>
     )
 }

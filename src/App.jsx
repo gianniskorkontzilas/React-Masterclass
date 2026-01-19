@@ -12,7 +12,9 @@ function App() {
 
   return (
     <div>
-      {variable}
+      {/* {variable} */}
+      <br/>
+      <Children childrenData={variable}></Children>
     </div>
   )
 }
