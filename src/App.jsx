@@ -2,18 +2,17 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import ThisComponent from './components/ThisComponent'
+import StateLessComponent from './components/StateLessComponent'
 
 function App() {
 
-  useEffect(  () => {
-    console.log('This component is mounted')
-
-  }, [])
+  
 
   return (
     <div>
-      hello react
+      <StateLessComponent text={"this is text "} >  </StateLessComponent>
+      <StateLessComponent text={"this is not text "} >  </StateLessComponent>
+
     </div>
   )
 }
