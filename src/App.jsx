@@ -2,15 +2,22 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import ClassComp from './components/ClassComp'
+import ThisComponent from './components/ThisComponent'
 
 function App() {
 
+
+
   return (
     <div>
-      <ClassComp></ClassComp>
+      <ThisComponent name={"John Doe"} age={21}></ThisComponent>
+      <ThisComponent name={"Joan Doe"} age={23}></ThisComponent>
+      <ThisComponent name={"Mike da"} age={31}></ThisComponent>
+
     </div>
   )
 }
+
+
 
 export default App
