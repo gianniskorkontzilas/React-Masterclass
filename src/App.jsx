@@ -1,27 +1,21 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Children from './Children'
 
 
 function App() {
 
-  const [boolean, setBoolean] = useState(false)
+const ExpensiveCalculation = useMemo((x) => {
+  let compurtedValue = 2 + x
+  return compurtedValue
+}, [value])
   
 
   return (
     <div>
-
-      {boolean && <p>True Condition</p>}
-      {!boolean && <p>False condition</p>}
-      <br/>
-
-      <button onClick={() => {
-        setBoolean(prev => !prev)
-
-      }}>
-        toggle
-      </button>
+       <children/>
     </div>
   )
 }
