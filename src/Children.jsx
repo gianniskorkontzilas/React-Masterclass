@@ -1,7 +1,9 @@
 import React, { useCallback, useState } from "react";
 
 const Children = ({
-    data
+    data,
+    dataChangingFunction,
+    anotherFunction
 })=> {
 
 
@@ -9,6 +11,15 @@ const Children = ({
     return (
         <div>
             {data}
+            <br/>
+            <button onClick={() => {
+                let anotherFunctionString = anotherFunction()
+                dataChangingFunction(anotherFunctionString)
+            }
+
+            }>
+                change
+            </button>
         </div>
     )
 }

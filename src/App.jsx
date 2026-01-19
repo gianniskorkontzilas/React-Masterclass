@@ -9,16 +9,15 @@ function App() {
 
   const [variable, setVariable] = useState('my world')
 
+  const anyFunction = ( ) => {
+    return 'hello world 3'
+  }
+
   return (
     <div>
-       {variable}
-       <Children data ={variable}/>
-       <br/>
-       <button onClick = {( ) => {
-         setVariable('something else')
-       }}>
-        change
-       </button>
+      {variable}
+      <Children data={variable} dataChangingFunction={setVariable} anotherFunction={anyFunction} />
+      <br />
     </div>
   )
 }
