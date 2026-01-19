@@ -3,16 +3,18 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import StateLessComponent from './components/StateLessComponent'
+import Stateful from './components/Stateful'
 
 function App() {
 
-  
+const [count, setCount]  = useState(0)
 
   return (
     <div>
-      <StateLessComponent text={"this is text "} >  </StateLessComponent>
-      <StateLessComponent text={"this is not text "} >  </StateLessComponent>
-
+      <p>count number:  {count}</p>
+      <button onClick={() => {
+        setCount(prev => prev + 1)
+      }}>Increas count</button>
     </div>
   )
 }
