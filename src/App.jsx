@@ -6,24 +6,22 @@ import './App.css'
 
 function App() {
 
-const [stringState, setStingState] = useState("hello")
-const [count, setCount] = useState(1)
+  const [boolean, setBoolean] = useState(false)
+  
 
   return (
     <div>
-      this is count: <b>{count}</b>
+
+      {boolean && <p>True Condition</p>}
+      {!boolean && <p>False condition</p>}
       <br/>
-      <button onClick={() =>{
-       setCount(previous => previous + 1)
-      }}>change count</button>
-      <br/>
-      <br/>
-      this is the text: <b>{stringState}</b>
-      <br/>
-      <button onClick={() =>{
-        setStingState("world")
-      }}>change string</button>
-    
+
+      <button onClick={() => {
+        setBoolean(prev => !prev)
+
+      }}>
+        toggle
+      </button>
     </div>
   )
 }
