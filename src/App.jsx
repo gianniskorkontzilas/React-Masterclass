@@ -6,13 +6,16 @@ import ThisComponent from './components/ThisComponent'
 
 function App() {
 
+  const logic = () => {
+    console.log("This is App.jsx file")
+  }
+
 
 
   return (
     <div>
-      <ThisComponent name={"John Doe"} age={21}></ThisComponent>
-      <ThisComponent name={"Joan Doe"} age={23}></ThisComponent>
-      <ThisComponent name={"Mike da"} age={31}></ThisComponent>
+      <ThisComponent name={"John Doe"} age={21} functionCall={logic} ></ThisComponent>
+      
 
     </div>
   )
