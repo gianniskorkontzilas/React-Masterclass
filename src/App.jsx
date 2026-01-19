@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from 'react'
+import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -7,15 +7,18 @@ import Children from './Children'
 
 function App() {
 
-const ExpensiveCalculation = useMemo((x) => {
-  let compurtedValue = 2 + x
-  return compurtedValue
-}, [value])
-  
+  const [variable, setVariable] = useState('my world')
 
   return (
     <div>
-       <children/>
+       {variable}
+       <Children data ={variable}/>
+       <br/>
+       <button onClick = {( ) => {
+         setVariable('something else')
+       }}>
+        change
+       </button>
     </div>
   )
 }
