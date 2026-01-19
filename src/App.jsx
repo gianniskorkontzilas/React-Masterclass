@@ -7,14 +7,15 @@ import Children from './Children'
 
 function App() {
 
-  const [variable, setVariable] = useState('my world')
+
 
 
   return (
-    <div>
-      {/* {variable} */}
-      <br/>
-      <Children childrenData={variable}></Children>
+    <div className='...'>
+      Parent Component
+
+      <Children  />
+
     </div>
   )
 }
