@@ -9,12 +9,13 @@ function App() {
     slot3: 'slot3'
   }
 
-  const [currentSlot, setCurrentSlot] = useState(jsxSlots.slot4)
+  const [currentSlot, setCurrentSlot] = useState(jsxSlots.slot1)
 
   if(currentSlot === jsxSlots.slot1) {
     return (
       <div className='container'>
         <div>Slot 1</div>
+        <button onClick={() => setCurrentSlot (jsxSlots.slot2)}>go to slot2</button>
       </div>
     )
   }
@@ -23,6 +24,7 @@ function App() {
     return (
       <div className='container'>
         <div>Slot 2</div>
+        <button onClick={() => setCurrentSlot (jsxSlots.slot3)}>go to slot 3</button>
       </div>
     )
   }
@@ -31,6 +33,7 @@ function App() {
     return (
       <div className='container'>
         <div>Slot 3</div>
+        <button onClick={() => setCurrentSlot ("doesnt exist")}> go to default slot</button>
       </div>
     )
   }
