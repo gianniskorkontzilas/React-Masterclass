@@ -1,21 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React, { useReducer } from 'react'
 import './App.css'
-import Children from './Children'
+
 
 
 function App() {
 
+  const initialState = {
+    count: 0,
+    text: '',
 
+  }
 
+  const reducerFunction = (state, action) => {
+    if(action.type === 'increment') {
+      return {
+        ...state,
+        count: state.count + 1,
+      }
+    }
+    if(action.type === 'decrement') {
+      return {
+        ...state,
+        count:state.count - 1,
+      }
+    }
+    if(action.type === 'setText') {
+      return {
+        ...state,
+        text: action.payload,
+      }
+    }
+
+    return state;
+
+  }
+
+  const [state, dispatch] = useReducer(reducerFunction,initialState);
 
   return (
     <div className='...'>
-      Parent Component
-
-      <Children  />
-
+      Count: {state.count}
+      <br/>
+      Text: {state.text}
+      <br/>
+      <button onClick={() => dispatch({type: 'increment'})}>Increase count</button>
+      <br/>
+      <button onClick={() => dispatch({type: 'decrement'})}>Decrease count</button>
+      <br/>
+      <button onClick={() => dispatch({type: 'setText', payload: 'New Text'})}>Change Text</button>
     </div>
   )
 }
