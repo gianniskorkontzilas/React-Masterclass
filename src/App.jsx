@@ -22,10 +22,13 @@ function App() {
     },
   ]
  
+  const list2 = list.filter(curr => curr.id !==3) 
+  
+  
   return(
     <div className="...">
     {
-      list.map(curr => {
+      list2.map(curr => {
         return(
           <p key={curr.id}>{curr.id}: {curr.name}</p>
         )
