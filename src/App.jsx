@@ -18,9 +18,17 @@ function App() {
 
  return (
   <div className="container">
-    <input value={value} onChange={(e) =>{
+    <input value={value} 
+    onKeyUp={(event) => {
+      if(event.key === 'Enter') {
+        alert("Input value is submitted: " + value);
+      }
+
+    }}
+    onChange={(e) =>{
       setValue(e.target.value);
     }} type="text" />
+
     <button
     disabled={disabled}
     onClick={() => { 
