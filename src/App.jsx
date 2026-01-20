@@ -5,11 +5,8 @@ function App() {
 
 
   return(
-    <div>
-      <h1 style={{
-        color: 'blue',
-        fontSize: '5rem'
-      }}>React Master</h1>
+    <div className="container">
+       <h1 className="heading">React Master</h1>
     </div>
   )
 }
