@@ -5,6 +5,8 @@ function App() {
 
  
   const [condition, setCondition] = useState(false)
+  const [condition2, setCondition2] = useState(false)
+
   
   return(
     <div className="...">
@@ -14,9 +16,13 @@ function App() {
         The condition is true
       </p>
       :
-      <p style={{color: 'red'}}>
-      The condition is false
-    </p>
+      condition2 ?
+      <p style={{color: 'green'}}>
+      The condition one is false and condition2 is true
+    </p> :
+     <p style={{color: 'red'}}>
+     The condition one is false and condition2 is also false
+   </p>
     }
     </div>
   )
