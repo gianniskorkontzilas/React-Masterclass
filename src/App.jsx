@@ -3,21 +3,34 @@ import './App.css'
 
 function App() {
 
-  let array = ['Hello', 'I', 'am', 'a', 'React', 'Developer']
+  let list = [
+    {
+      id:1,
+      name: 'John Doe',
+    },
+    {
+      id:2,
+      name: 'Jane Doe',
+    },
+    {
+      id:3,
+      name: 'John Smith',
+    },
+    {
+      id:4,
+      name: 'Jane Smith',
+    },
+  ]
  
   return(
     <div className="...">
-      {
-        array.map((curr) => {
-          if(curr === 'React') {
-            return 'Awesome'
-          }
-
-          return (
-            <p>{curr}</p>
-          )
-        } )
-      }
+    {
+      list.map(curr => {
+        return(
+          <p key={curr.id}>{curr.id}: {curr.name}</p>
+        )
+      })
+    }
     </div>
   )
 }
