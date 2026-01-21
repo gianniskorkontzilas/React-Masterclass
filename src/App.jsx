@@ -9,16 +9,23 @@ function App() {
 
 
   let element = useRef(null)
+  let container = useRef(null)
 
 
   useEffect (() => {
-
+    window.addEventListener('resize', () => {
+      console.log('resize event is triggered')
+      container.current.style.backgroundColor = "cyan";
+    })
+    return () => {
+      // cleanup function
+    }
   }, [])
 
 
   return (
  
-    <div className="container">
+    <div ref={container} className="container">
       <div onClick={() => {
         element.current.style.backgroundColor = 'yellow';
         element.current.style.color ='black';
