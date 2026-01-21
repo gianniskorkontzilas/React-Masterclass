@@ -19,6 +19,10 @@ function App() {
     })
     return () => {
       // cleanup function
+      window.removeEventListener('resize', () => {
+        console.log('resize event is trigered')
+        // container.current.style.backgroundColor = "cyan";
+      })
     }
   }, [])
 
