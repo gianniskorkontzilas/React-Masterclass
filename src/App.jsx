@@ -1,24 +1,22 @@
-import React, { useEffect, useRef, useState } from "react"
+import React from "react"
 import './App.css'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Home from "./pages/Home"
+import About from "./pages/About"
 
 function App() {
 
-  const [currentValue, setCurrentValue] = useState('')
 
-  useEffect(() => {
-    console.log(currentValue)
-  }, [currentValue])
+
 
   return (
-    <div className="...">
-      <div>{currentValue}</div>
-      <input value={currentValue}
-      onChange={(event) => {
-        setCurrentValue(event.target.value)
-      }}  
-      type="text"></input>
-    </div>
-
+ 
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Home />} path='/' />
+        <Route element={<About />} path='/about'/>
+      </Routes>
+    </BrowserRouter>
 
   )
 
