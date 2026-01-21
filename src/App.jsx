@@ -3,15 +3,20 @@ import './App.css'
 
 function App() {
 
-  const ref = useRef()
+  const [currentValue, setCurrentValue] = useState('')
+
+  useEffect(() => {
+    console.log(currentValue)
+  }, [currentValue])
 
   return (
     <div className="...">
-      <div>hello</div>
-      <input ref={ref} type ="text" />
-      <button onClick={() => 
-        console.log(ref.current.value)
-      }>console value</button>
+      <div>{currentValue}</div>
+      <input value={currentValue}
+      onChange={(event) => {
+        setCurrentValue(event.target.value)
+      }}  
+      type="text"></input>
     </div>
 
 
