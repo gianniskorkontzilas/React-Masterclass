@@ -1,21 +1,17 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import './App.css'
 
 function App() {
 
-  const [array, setArray] = useState([
-    {key: 1},
-    {key: undefined},
-    {key: 3}
-  ])
+  const ref = useRef()
 
   return (
-    <div>
-      {
-        array?.map((curr, index) => {
-          return (<p key={index}>{curr?.key}</p>)
-        })
-      }
+    <div className="...">
+      <div>hello</div>
+      <input ref={ref} type ="text" />
+      <button onClick={() => 
+        console.log(ref.current.value)
+      }>console value</button>
     </div>
 
 
