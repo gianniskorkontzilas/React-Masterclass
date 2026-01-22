@@ -17,6 +17,24 @@ const fetchData = async() => {
   }
 }
 
+const postData = async() => {
+  try{
+    let response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+      method: 'POST',
+      body: JSON.stringify({
+      title: 'hello',
+      body: 'world',
+      userId: 1000
+     })
+    })
+    let result = await response.json()
+    console.log("Data posted successfully", result)
+    alert('Data posted successfully')
+  } catch(e) {
+    console.log(e)
+  }
+}
+
   useEffect(() =>  {
     fetchData()
   }, [])
@@ -33,6 +51,9 @@ const fetchData = async() => {
       ) :
       <div>No data is available</div>
    }
+   <button onClick={postData}>
+    Post random data
+   </button>
     </div>
   )
 }
