@@ -40,7 +40,8 @@ const deletePost = async () => {
     let res = await fetch('https://jsonplaceholder.typicode.com/posts/1',{
       method: 'DELETE'
     })
-    console.log("Data deleted successfully", res)
+    let result = await res.json()
+    console.log("Data deleted successfully", result)
     alert('Data deleted successfully');
   } catch (e) {
     console.log
