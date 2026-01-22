@@ -35,6 +35,18 @@ const postData = async() => {
   }
 }
 
+const deletePost = async () => {
+  try {
+    let res = await fetch('https://jsonplaceholder.typicode.com/posts/1',{
+      method: 'DELETE'
+    })
+    console.log("Data deleted successfully", res)
+    alert('Data deleted successfully');
+  } catch (e) {
+    console.log
+  }
+}
+
   useEffect(() =>  {
     fetchData()
   }, [])
@@ -53,6 +65,9 @@ const postData = async() => {
    }
    <button onClick={postData}>
     Post random data
+   </button>
+   <button onClick={deletePost}>
+    Delete data
    </button>
     </div>
   )
