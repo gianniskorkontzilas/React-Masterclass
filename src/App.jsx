@@ -1,46 +1,40 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useState } from "react"
 import './App.css'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Home from "./pages/Home"
-import About from "./pages/About"
-import Error404 from "./pages/Error404"
+
 
 function App() {
 
+const [data, setData] = useState(null);
 
-  let element = useRef(null)
-  let container = useRef(null)
+const fetchData = async() => {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts/1')
+    const data = await response.json()
+    setData(data)
+    console.log(data)
+  } catch(e) {
+    console.log(e)
+  }
+}
 
-
-  useEffect (() => {
-    window.addEventListener('resize', () => {
-      console.log('resize event is triggered')
-      container.current.style.backgroundColor = "cyan";
-    })
-    return () => {
-      // cleanup function
-      window.removeEventListener('resize', () => {
-        console.log('resize event is trigered')
-        // container.current.style.backgroundColor = "cyan";
-      })
-    }
+  useEffect(() =>  {
+    fetchData()
   }, [])
 
-
   return (
- 
-    <div ref={container} className="container">
-      <div onClick={() => {
-        element.current.style.backgroundColor = 'yellow';
-        element.current.style.color ='black';
-      }} ref={element}>
-        <p>The box</p>
-      </div>
+    <div className="container">
+      {
+      data ? (
+        <div>
+          <h1>title: {data.title}</h1>
+          <p>userId: {data.userId}</p>
 
+        </div>
+      ) :
+      <div>No data is available</div>
+   }
     </div>
-
   )
-
 }
 
  export default App
